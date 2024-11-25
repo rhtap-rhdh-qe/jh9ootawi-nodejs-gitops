@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: jh9ootawi-nodejs-gitops
+  description: This is GitOps manifest for jh9ootawi-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: jh9ootawi-nodejs
+    backstage.io/kubernetes-id: jh9ootawi-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: jh9ootawi-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:jh9ootawi-nodejs
